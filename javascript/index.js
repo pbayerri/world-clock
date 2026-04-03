@@ -25,6 +25,45 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]",
     );
   }
+  //Buenos Aires
+  let buenosAiresElement = document.querySelector("#buenos-aires");
+  if (buenosAiresElement) {
+    let buenosAiresDateElement = buenosAiresElement.querySelector(".date");
+    let buenosAiresTimeElement = buenosAiresElement.querySelector(".time");
+
+    let buenosAiresTime = moment().tz("America/Buenos_Aires");
+
+    buenosAiresDateElement.innerHTML = moment().format("MMMM Do YYYY");
+    buenosAiresTimeElement.innerHTML = buenosAiresTime.format(
+      "h:mm:ss [<small>]A[</small>]",
+    );
+  }
+  //Cairo
+  let cairoElement = document.querySelector("#cairo");
+  if (cairoElement) {
+    let cairoDateElement = cairoElement.querySelector(".date");
+    let cairoTimeElement = cairoElement.querySelector(".time");
+
+    let cairoTime = moment().tz("Africa/Cairo");
+
+    cairoDateElement.innerHTML = moment().format("MMMM Do YYYY");
+    cairoTimeElement.innerHTML = cairoTime.format(
+      "h:mm:ss [<small>]A[</small>]",
+    );
+  }
+  //Vancouver
+  let vancouverElement = document.querySelector("#vancouver");
+  if (vancouverElement) {
+    let vancouverDateElement = vancouverElement.querySelector(".date");
+    let vancouverTimeElement = vancouverElement.querySelector(".time");
+
+    let vancouverTime = moment().tz("America/Vancouver");
+
+    vancouverDateElement.innerHTML = moment().format("MMMM Do YYYY");
+    vancouverTimeElement.innerHTML = vancouverTime.format(
+      "h:mm:ss [<small>]A[</small>]",
+    );
+  }
 }
 
 function updateCity(event) {
@@ -41,7 +80,8 @@ function updateCity(event) {
             <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small></div>
-        </div>`;
+        </div>
+        <a href="index.html">All cities</a>`;
 }
 
 updateTime();
